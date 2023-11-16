@@ -1,0 +1,81 @@
+{
+    "configuration": {
+        "status": "info",
+        "name": "Log4j2 Configuration",
+        "packages": "edu.example.rac",
+        "properties": {
+            "property": {
+                "name": "log_file_path",
+                "value": "logs/logfile.log"
+            }
+        },
+        "appenders": {
+            "Console": {
+                "name": "STDOUT",
+                "target": "SYSTEM_OUT",
+                "follow": true,
+                "PatternLayout": {
+                    "pattern": "%highlight{ %d{yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnn}{GMT+0} UTC | %p | %pid - %t(%T) | %sn | %l | %m%n }"
+                }
+            },
+            "File": {
+                "name": "FILE",
+                "fileName": "${log_file_path}",
+                "PatternLayout": {
+                    "pattern": "%highlight{ %d{yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnn}{GMT+0} UTC | %p | %pid - %t(%T) | %sn | %l | %m%n }"
+                }
+            },
+            "RollingFile": {
+                "name": "ROLLING_FILE",
+                "fileName": "logs/rollingfile.log",
+                "filePattern": "${archive}/rollingfile.log.%d{yyyy-MM-dd-hh-mm}.gz",
+                "PatternLayout": {
+                    "pattern": "%highlight{ %d{yyyy-MM-dd'T'HH:mm:ss.nnnnnnnnn}{GMT+0} UTC | %p | %pid - %t(%T) | %sn | %l | %m%n }"
+                },
+                "Policies": {
+                    "SizeBasedTriggeringPolicy": {
+                        "size": "128 KB"
+                    }
+                },
+                "DefaultRolloverStrategy": {
+                    "max": "30"
+                }
+            }
+        },
+        "loggers": {
+            "root": {
+                "level": "error",
+                "additivity": false,
+                "AppenderRef": {
+                    "ref": "STDOUT"
+                }
+            },
+            "logger": [
+                {
+                    "name": "edu.example.rac",
+                    "level": "info",
+                    "additivity": false,
+                    "AppenderRef": [{
+                        "ref": "STDOUT"
+                    }, {
+                        "ref": "FILE"
+                    }]
+                }, {
+                    "name": "edu.example",
+                    "level": "warn",
+                    "additivity": false,
+                    "AppenderRef": {
+                        "ref": "STDOUT"
+                    }
+                }, {
+                    "name": "org",
+                    "level": "error",
+                    "additivity": false,
+                    "AppenderRef": {
+                        "ref": "STDOUT"
+                    }
+                }
+            ]
+        }
+    }
+}
