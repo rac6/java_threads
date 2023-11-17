@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 
 
 
-public class RunnableThreadTest implements TestLifeCycleLogger {
+class RunnableThreadTest extends TestUtils implements TestLifeCycleLogger {
     static final Logger log = LogManager.getLogger(RunnableThreadTest.class);
 
 
@@ -35,14 +35,6 @@ public class RunnableThreadTest implements TestLifeCycleLogger {
     @AfterEach
     void afterEach() { 
         threadUnderTest = null;
-    }
-
-    boolean isSorted(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1])
-                return false;
-        }
-        return true;
     }
 
 
@@ -68,7 +60,7 @@ public class RunnableThreadTest implements TestLifeCycleLogger {
 
         log.info(String.format("Actual sorted int[]: %s", Arrays.toString(actual)));
 
-        assertTrue(isSorted(actual), String.format("int[] not sorted: nums[]: %s", Arrays.toString(threadUnderTest.getNums())));
+        assertTrue(isSorted(actual), String.format("int[] not sorted: nums[]: %s", Arrays.toString(actual)));
     }
 
 }
