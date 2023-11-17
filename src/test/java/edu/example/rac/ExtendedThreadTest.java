@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.awaitility.Awaitility;
 import static org.hamcrest.Matchers.*;
 
+import java.io.IOException;
 import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -44,12 +45,12 @@ class ExtendedThreadTest extends TestUtils implements TestLifeCycleLogger {
 
 
     /**
-     * Execution: mvn test -Dtest=ExtendingThreadTest#testStart
+     * Execution: mvn test -Dtest=ExtendedThreadTest#startTest
      * @throws InterruptedException
      * @throws IOException
      */
     @Test
-    void testStart() throws InterruptedException, IllegalArgumentException {
+    void startTest() throws InterruptedException, IllegalArgumentException {
         threadUnderTest.start();
 
         Awaitility.await().until(() -> threadUnderTest.isAlive(), is(false));
