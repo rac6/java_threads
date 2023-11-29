@@ -1,3 +1,28 @@
 ** Resources
 https://docs.oracle.com/javase/tutorial/essential/concurrency/
 https://www.baeldung.com/java-concurrency
+https://www.baeldung.com/java-synchronize-static-variable-different-threads
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-basic/
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-basic-2/
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-basic-3/
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-2/
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-advanced
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-advanced-2
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-advanced-3
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-advanced-4
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-advanced-5
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-collections
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-collections-2
+https://github.com/eugenp/tutorials/tree/master/core-java-modules/core-java-concurrency-simple
+
+
+**Example 1
+The class SyncStaticVars demonstrates examples how to synchronize access to static variable from multiple threads.
+
+**Example 2
+
+**Example 3
+
+**Example 4
+
+**Example 5
